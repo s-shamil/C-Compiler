@@ -1,0 +1,160 @@
+I foo FUNCTION
+
+ Inserted in ScopeTable# 1 at position 6, 0
+
+I i VAR
+
+ Inserted in ScopeTable# 1 at position 1, 0
+
+L foo
+
+ Found in ScopeTable# 1 at position 6, 0
+
+L j
+
+ Not found
+
+I 5 NUMBER
+
+ Inserted in ScopeTable# 1 at position 4, 0
+
+P A
+
+ ScopeTable # 1
+ 0 --> 
+ 1 -->  < i : VAR > 
+ 2 --> 
+ 3 --> 
+ 4 -->  < 5 : NUMBER > 
+ 5 --> 
+ 6 -->  < foo : FUNCTION > 
+
+D j
+
+ Not found
+
+j not found
+
+D i
+
+ Found in ScopeTable# 1 at position 1, 0
+
+Deleted entry at 1, 0 from current ScopeTable
+
+P A
+
+ ScopeTable # 1
+ 0 --> 
+ 1 --> 
+ 2 --> 
+ 3 --> 
+ 4 -->  < 5 : NUMBER > 
+ 5 --> 
+ 6 -->  < foo : FUNCTION > 
+
+S
+
+ New ScopeTable with id 2 created
+
+I <= RELOP
+
+ Inserted in ScopeTable# 2 at position 5, 0
+
+I == RELOP
+
+ Inserted in ScopeTable# 2 at position 3, 0
+
+P A
+
+ ScopeTable # 2
+ 0 --> 
+ 1 --> 
+ 2 --> 
+ 3 -->  < == : RELOP > 
+ 4 --> 
+ 5 -->  < <= : RELOP > 
+ 6 --> 
+
+ ScopeTable # 1
+ 0 --> 
+ 1 --> 
+ 2 --> 
+ 3 --> 
+ 4 -->  < 5 : NUMBER > 
+ 5 --> 
+ 6 -->  < foo : FUNCTION > 
+
+I <= RELOP
+
+ <<=,RELOP> already exists in current ScopeTable
+
+I foo FUNCTION
+
+ Inserted in ScopeTable# 2 at position 6, 0
+
+D ==
+
+ Found in ScopeTable# 2 at position 3, 0
+
+Deleted entry at 3, 0 from current ScopeTable
+
+P A
+
+ ScopeTable # 2
+ 0 --> 
+ 1 --> 
+ 2 --> 
+ 3 --> 
+ 4 --> 
+ 5 -->  < <= : RELOP > 
+ 6 -->  < foo : FUNCTION > 
+
+ ScopeTable # 1
+ 0 --> 
+ 1 --> 
+ 2 --> 
+ 3 --> 
+ 4 -->  < 5 : NUMBER > 
+ 5 --> 
+ 6 -->  < foo : FUNCTION > 
+
+E
+
+ ScopeTable with id 2 removed
+
+I t t
+
+ Inserted in ScopeTable# 1 at position 6, 1
+
+I k k
+
+ Inserted in ScopeTable# 1 at position 3, 0
+
+S
+
+ New ScopeTable with id 2 created
+
+I , comma
+
+ Inserted in ScopeTable# 2 at position 4, 0
+
+P A
+
+ ScopeTable # 2
+ 0 --> 
+ 1 --> 
+ 2 --> 
+ 3 --> 
+ 4 -->  < , : comma > 
+ 5 --> 
+ 6 --> 
+
+ ScopeTable # 1
+ 0 --> 
+ 1 --> 
+ 2 --> 
+ 3 -->  < k : k > 
+ 4 -->  < 5 : NUMBER > 
+ 5 --> 
+ 6 -->  < foo : FUNCTION >  < t : t > 
+
